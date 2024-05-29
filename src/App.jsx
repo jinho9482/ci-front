@@ -3,8 +3,6 @@ import { postInfo, getList } from "./api/api";
 import "./App.css";
 
 function App() {
-  const [name, setName] = useState("");
-  const [text, setText] = useState("Text will be displayed.");
   const [list, setList] = useState();
 
   const get = async () => {
