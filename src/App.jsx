@@ -15,14 +15,16 @@ function App() {
     // e.preventDefault();
     const getName = document.getElementById("name").value;
     const getText = document.getElementById("text").value;
-    postInfo({ name: getName, text: getText });
+    // 여기에서 await을 안 걸어서 insert 되기 전에 getList를 진행하면 새로 추가한 데이터를 가져오지 못할 수 있다.
+    await postInfo({ name: getName, text: getText });
     const res = await getList();
     console.log(res);
-    setList(res);
+    setList(res); // state 가 바뀌어야 re rendering 이 된다.
   };
 
   useEffect(() => {
     get();
+    console.log(location.host);
   }, []);
 
   return (
