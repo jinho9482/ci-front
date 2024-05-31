@@ -24,7 +24,7 @@ function App() {
 
   useEffect(() => {
     get();
-    console.log(location.host);
+    console.log(window.location.host);
   }, []);
 
   return (
